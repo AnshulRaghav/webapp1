@@ -1,0 +1,53 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}My App/Details{% endblock %}
+{% block update %} 
+<a class="nav-link" href="{% url 'myapp:employee-update' employee.id %}">Update</a> 
+<a class="nav-link" href="{% url 'myapp:employee-delete' employee.id %}">Delete</a>
+<a class="nav-link" href="{% url 'myapp:logout'  %}">logout</a>
+{% endblock %}
+<style type="text/css">
+	h6{
+		color: red;
+	}
+
+</style>
+{%block body%}
+	<h3>{{ employee.name }}</h3> <h4>{{ employee.designation }}</h4><h5>{{ employee.gender}}</h5>
+	<img src="{{ employee.dp.url }}" height="200px" width="200px">
+	{% if employee.video.url is not None %}
+				<video height="300px" width="300px" controls>
+				<source src="{{ employee.video.url }}" type="video/mp4">
+				</video><br><br>
+			{% endif %}
+	{% for emp in employee.auth_data_set.all %}
+		<h6>{{emp.employee_id}}</h6>
+		<h6>{{emp.employee_password}}</h6>
+	{% endfor %}
+	{% if error_msg %}
+		<p><strong>{{ error_msg }}</strong>
+	{% endif %}
+
+	
+	
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

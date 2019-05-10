@@ -1,0 +1,12 @@
+{% extends 'myapp/base.html' %}
+
+{% block body %}
+<form method="post" enctype="multipart/form-data" action="">
+	{% csrf_token %}
+	{% for field in form %}
+		<div><span style="margin-right:30px">{{ field.label_tag}}</span>{{field}}</div>
+	{% endfor %}
+	<br>
+	<input type="submit" name="submit" value="Register">
+</form>
+{% endblock %}
