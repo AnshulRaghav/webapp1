@@ -1,4 +1,4 @@
-# Admin panel
+# Admin pan
 Created an admin-panel using Django framework.
 
 ### Tasks that an admin can perform
