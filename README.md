@@ -1,7 +1,7 @@
 # Admin panel
 Created an admin-panel using Django framework.
 
-### Tasks that an admin can perform:
+### Tasks that an admin can perform
 
 - add a new user
 - update the user profile
